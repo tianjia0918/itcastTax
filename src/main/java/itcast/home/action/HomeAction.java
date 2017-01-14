@@ -1,25 +1,23 @@
 package itcast.home.action;
 
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
-import javax.annotation.Resource;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 import itcast.core.Constant.Constant;
 import itcast.core.util.QueryHelper;
 import itcast.nsfw.complain.entity.Complain;
+import itcast.nsfw.info.entity.Info;
 import itcast.nsfw.info.service.InfoService;
 import itcast.nsfw.user.entity.User;
 import itcast.nsfw.user.service.UserService;
 import org.apache.struts2.ServletActionContext;
 import org.json.JSONObject;
 
-import itcast.nsfw.info.entity.Info;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
 
 public class HomeAction extends ActionSupport {
 	
@@ -33,7 +31,8 @@ public class HomeAction extends ActionSupport {
 	private List<Info> infoList;
 	private Complain comp;
 	private User user;
-	
+
+
 	public String execute(){ 
 		//信息列表展示
 		ActionContext.getContext().getContextMap().put("infoTypeMap", Info.Info_type_map);
