@@ -33,6 +33,7 @@ public class HomeAction extends ActionSupport {
 	private User user;
 
 
+
 	public String execute(){ 
 		//信息列表展示
 		ActionContext.getContext().getContextMap().put("infoTypeMap", Info.Info_type_map);
